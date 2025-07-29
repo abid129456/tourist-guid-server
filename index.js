@@ -13,7 +13,6 @@ app.use(express.json());
 
 const uri = process.env.MONGODB_URI || "mongodb+srv://tourGiude:ifxlFNqEsmlZjB1W@cluster0.zhani17.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
-// MongoDB Client
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
