@@ -56,7 +56,7 @@ async function run() {
       res.send({ token });
     });
 
-    // Users APIs
+ 
 
     // Create or upsert user (called after Firebase auth)
     app.post('/users', async (req, res) => {
