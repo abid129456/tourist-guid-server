@@ -65,7 +65,6 @@ async function run() {
       try {
         const existingUser = await usersCollection.findOne({ email: user.email });
         if (existingUser) {
-          // update existing user info (optional)
           const result = await usersCollection.updateOne(
             { email: user.email },
             { $set: user }
