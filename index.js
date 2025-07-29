@@ -99,7 +99,7 @@ async function run() {
       const newRole = req.body.role;
 
       // Optional: You can add logic here to verify if requester is admin
-      // by decoding req.decoded and checking role from usersCollection if needed
+
 
       try {
         const result = await usersCollection.updateOne(
