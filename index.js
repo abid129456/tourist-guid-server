@@ -71,7 +71,6 @@ async function run() {
           );
           return res.send({ message: "User updated", result });
         } else {
-          // insert new user
           const result = await usersCollection.insertOne(user);
           return res.send({ message: "User created", result });
         }
