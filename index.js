@@ -79,7 +79,7 @@ async function run() {
       }
     });
 
-    // Get user by email (to get role)
+
     app.get('/users/:email', verifyToken, async (req, res) => {
       const email = req.params.email;
       try {
