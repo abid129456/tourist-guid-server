@@ -27,7 +27,7 @@ const verifyToken = (req, res, next) => {
   if (!authHeader)
     return res.status(401).send({ error: 'Unauthorized access: No token provided' });
 
-  const token = authHeader.split(' ')[1]; // Authorization: "Bearer TOKEN"
+  const token = authHeader.split(' ')[1];
   jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, decoded) => {
     if (err)
       return res.status(403).send({ error: 'Forbidden access: Invalid token' });
@@ -47,7 +47,7 @@ async function run() {
     const tourGuidesCollection = database.collection("tourGuides");
     const usersCollection = database.collection("users");
 
-    // JWT Token Generator (no auth needed)
+    
     app.post("/jwt", (req, res) => {
       const user = req.body;
       const token = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {
