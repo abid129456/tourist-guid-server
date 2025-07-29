@@ -98,7 +98,6 @@ async function run() {
       const email = req.params.email;
       const newRole = req.body.role;
 
-      // Optional: You can add logic here to verify if requester is admin
 
 
       try {
