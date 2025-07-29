@@ -93,7 +93,7 @@ async function run() {
       }
     });
 
-    // Update user role by email (Admin only route ideally, so add verifyToken)
+
     app.patch('/users/role/:email', verifyToken, async (req, res) => {
       const email = req.params.email;
       const newRole = req.body.role;
