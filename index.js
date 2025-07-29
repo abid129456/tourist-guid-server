@@ -111,9 +111,7 @@ async function run() {
       }
     });
 
-    // Booking APIs
 
-    // Create a new booking (protected route)
     app.post('/bookings', verifyToken, async (req, res) => {
       const booking = req.body;
       try {
@@ -125,7 +123,6 @@ async function run() {
       }
     });
 
-    // Get bookings (optionally filter by user email, protected)
     app.get('/bookings', verifyToken, async (req, res) => {
       const email = req.query.email;
       try {
@@ -138,9 +135,6 @@ async function run() {
       }
     });
 
-    // Tour Guide CRUD APIs
-
-    // Create new guide (protected)
     app.post('/tour-guides', verifyToken, async (req, res) => {
       const newGuide = req.body;
       try {
@@ -151,7 +145,6 @@ async function run() {
       }
     });
 
-    // Get all guides (public or protected as needed)
     app.get('/tour-guides', async (req, res) => {
       try {
         const guides = await tourGuidesCollection.find().toArray();
@@ -161,7 +154,7 @@ async function run() {
       }
     });
 
-    // Get guide by ID
+
     app.get('/tour-guides/:id', async (req, res) => {
       const id = req.params.id;
       try {
@@ -173,7 +166,7 @@ async function run() {
       }
     });
 
-    // Update guide by ID (protected)
+
     app.patch('/tour-guides/:id', verifyToken, async (req, res) => {
       const id = req.params.id;
       const updates = req.body;
@@ -188,7 +181,7 @@ async function run() {
       }
     });
 
-    // Delete guide by ID (protected)
+
     app.delete('/tour-guides/:id', verifyToken, async (req, res) => {
       const id = req.params.id;
       try {
@@ -199,7 +192,7 @@ async function run() {
       }
     });
 
-    // Approve guide (Admin action, protected)
+
     app.patch('/guides/approve/:id', verifyToken, async (req, res) => {
       const id = req.params.id;
       try {
@@ -213,19 +206,19 @@ async function run() {
       }
     });
 
-    // Test Route
+
     app.get('/', (req, res) => {
       res.send("Server is running 🟢");
     });
 
   } catch (error) {
-    console.error('❌ MongoDB connection error:', error);
+    console.error(' MongoDB connection error:', error);
   }
 }
 
 run().catch(console.dir);
 
-// Start server
+
 app.listen(port, () => {
-  console.log(`🚀 Server running on port ${port}`);
+  console.log(` Server running on port ${port}`);
 });
