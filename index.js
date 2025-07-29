@@ -58,7 +58,6 @@ async function run() {
 
  
 
- 
     app.post('/users', async (req, res) => {
       const user = req.body;
       if (!user.email) return res.status(400).send({ error: "Email required" });
