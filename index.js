@@ -7,11 +7,10 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 5000;
 
-
 app.use(cors());
 app.use(express.json());
 
-// MongoDB URI
+
 const uri = process.env.MONGODB_URI || "mongodb+srv://tourGiude:ifxlFNqEsmlZjB1W@cluster0.zhani17.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 // MongoDB Client
