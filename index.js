@@ -58,7 +58,7 @@ async function run() {
 
  
 
-    // Create or upsert user (called after Firebase auth)
+ 
     app.post('/users', async (req, res) => {
       const user = req.body;
       if (!user.email) return res.status(400).send({ error: "Email required" });
